@@ -11,22 +11,28 @@ import cloud3 from "../assets/cloud3.png";
 <Layout title="StugaAstrom">
   <!-- HERO --->
   <div
-    class="relative top-0 flex items-center justify-center w-full overflow-hidden pointer-events-none h-[40vh] hero-parallax"
+    class="relative top-0 flex items-center justify-center w-full overflow-hidden pointer-events-none h-[40vh] md:h-[50vh] lg:h-[70vh] xl:h-[90vh] hero-parallax"
   >
     <div class="absolute top-0 h-full overflow-hidden md:w-full md:h-fit house">
       <img class="h-full w-fit" src={heroImage} />
       <h1
-        class="absolute w-full text-2xl text-center text-white -translate-y-full top-2/4"
+        class="absolute w-full text-2xl text-center text-white -translate-y-full top-2/4 lg:text-4xl xl:text-6xl"
         id="text"
       >
         Välkommen till <br /> Lindvalls stugan
       </h1>
     </div>
-    <img class="absolute top-0 w-full h-full md:h-fit mountMg" src={mountMg} />
-    <img class="absolute top-0 w-full h-full md:h-fit cloud2" src={cloud2} />
-    <img class="absolute top-0 w-full h-full md:h-fit mountFg" src={mountFg} />
-    <img class="absolute top-0 w-full h-full md:h-fit cloud1" src={cloud1} />
-    <img class="absolute bottom-0 w-full h-full md:h-fit cloud3" src={cloud3} />
+    <img
+      class="absolute top-0 left-0 w-full h-full lg:w-3/4 mountMg"
+      src={mountMg}
+    />
+    <img class="absolute top-0 w-full h-full cloud2" src={cloud2} />
+    <img
+      class="absolute top-0 right-0 w-full h-full lg:w-3/4 mountFg"
+      src={mountFg}
+    />
+    <img class="absolute top-0 w-full h-full cloud1" src={cloud1} />
+    <img class="absolute bottom-0 w-full h-full cloud3" src={cloud3} />
   </div>
 
   <!-- FRASE EMOZIONALE -->
