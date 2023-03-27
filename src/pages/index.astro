@@ -1,70 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import heroImage from "../assets/heroImage.png";
-import Header from "../components/Header.astro";
+import mountMg from "../assets/mountMg.png";
+import mountFg from "../assets/mountFg.png";
+import cloud1 from "../assets/cloud1.png";
+import cloud2 from "../assets/cloud2.png";
+import cloud3 from "../assets/cloud3.png";
 ---
 
 <Layout title="StugaAstrom">
-  <div class="scrollDist"></div>
-  <div class="hero">
-    <svg viewBox="0 0 1200 700">
-      <mask id="m">
-        <g class="cloud1">
-          <rect fill="#fff" width="100%" height="801" y="799"></rect>
-          <image
-            xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg"
-            width="1200"
-            height="800"
-          />
-        </g>
-      </mask>
-
-      <image class="sky" xlink:href={heroImage} width="1360" />
-      <image
-        class="mountMg"
-        xlink:href="https://assets.codepen.io/721952/mountMg.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud2"
-        xlink:href="https://assets.codepen.io/721952/cloud2.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="mountFg"
-        xlink:href="https://assets.codepen.io/721952/mountFg.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud1"
-        xlink:href="https://assets.codepen.io/721952/cloud1.png"
-        width="1200"
-        height="800"
-      />
-      <image
-        class="cloud3"
-        xlink:href="https://assets.codepen.io/721952/cloud3.png"
-        width="1200"
-        height="800"
-      />
-      <text
-        class="flex items-center justify-center text-7xl"
-        fill="#fff"
-        x="50"
-        y="150">VÄLKOMMEN</text
+  <!-- HERO --->
+  <div
+    class="relative top-0 flex items-center justify-center w-full overflow-hidden pointer-events-none h-[40vh] hero-parallax"
+  >
+    <div class="absolute top-0 h-full overflow-hidden md:w-full md:h-fit house">
+      <img class="h-full w-fit" src={heroImage} />
+      <h1
+        class="absolute w-full text-2xl text-center text-white -translate-y-full top-2/4"
+        id="text"
       >
-
-      <g mask="url(#m)">
-        <rect fill="#fff" width="100%" height="100%"></rect>
-        <text class="text-7xl" x="50" y="150" fill="#162a43"
-          >LINDVALLS STUGAN</text
-        >
-      </g>
-    </svg>
+        Välkommen till <br /> Lindvalls stugan
+      </h1>
+    </div>
+    <img class="absolute top-0 w-full h-full md:h-fit mountMg" src={mountMg} />
+    <img class="absolute top-0 w-full h-full md:h-fit cloud2" src={cloud2} />
+    <img class="absolute top-0 w-full h-full md:h-fit mountFg" src={mountFg} />
+    <img class="absolute top-0 w-full h-full md:h-fit cloud1" src={cloud1} />
+    <img class="absolute bottom-0 w-full h-full md:h-fit cloud3" src={cloud3} />
   </div>
+
+  <!-- FRASE EMOZIONALE -->
+  <section class="m-0 bg-o-light bg-img">
+    <div class="visit-tailor-area fix raw-products">
+      <div class="container-fluid" id="rowFocus">
+        <div class="row">
+          <div
+            class="p-5 col-md-8 offset-md-2 d-flex justify-content-center align-items-center"
+          >
+            <h5
+              class="text-center title-focus wow fadeIn"
+              data-wow-delay=".2s"
+              id="titleFocus"
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim fuga
+              provident reiciendis est temporibus impedit, eos saepe. Sit,
+              explicabo corporis.
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center col-md-4 offset-md-4">
+            <a href="" class="custom-btn btn-o dark-border">Prenota Ora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
@@ -83,5 +74,685 @@ import Header from "../components/Header.astro";
     text-align: center;
     font-family: "Montserrat", sans-serif;
     cursor: pointer;
+  }
+
+  .hero-parallax {
+    background: #fff;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4fffd",endColorstr="#f4efe6",GradientType=1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #text {
+      position: absolute;
+      font-size: 65px;
+      line-height: 1.25;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 10;
+
+      background: rgb(244, 239, 230);
+      background: -moz-linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      background: linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4efe6",endColorstr="#f4efe6",GradientType=1);
+    }
+  }
+  .boxed-btn {
+    background: #fff;
+    color: $primary !important;
+    display: inline-block;
+    padding: 18px 44px;
+    font-family: $font-secondary;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0;
+    border: 1px solid $gold;
+    letter-spacing: 3px;
+    text-align: center;
+    color: $primary;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .boxed-btn:hover {
+    background: $primary;
+    color: #fff !important;
+    border: 1px solid $primary;
+  }
+
+  .boxed-btn:focus {
+    outline: none;
+  }
+
+  .boxed-btn.large-width {
+    width: 220px;
+  }
+
+  [data-overlay] {
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  [data-overlay]::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+  }
+
+  body {
+    font-family: $font-content;
+    font-weight: normal;
+    font-style: normal;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+
+  :target:before {
+    content: "";
+    display: block;
+    height: 200px;
+    margin: -200px 0 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: $font-primary;
+    color: $primary;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: normal;
+  }
+
+  h5,
+  h6 {
+    font-family: $font-secondary;
+    color: $primary;
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: normal;
+  }
+
+  p {
+    font-family: $font-content;
+    color: $content;
+    font-size: $content-size;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+  }
+
+  .z-1 {
+    z-index: 1;
+  }
+
+  .bg-img-1 {
+    background-image: url(../img/slider/slider-img-1.jpg);
+  }
+
+  .bg-img-2 {
+    background-image: url(../img/background-img/bg-img-2.jpg);
+  }
+
+  .cta-bg-1 {
+    background-image: url(../img/background-img/bg-img-3.jpg);
+  }
+
+  .img {
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+
+  .f-left {
+    float: left;
+  }
+
+  .f-right {
+    float: right;
+  }
+
+  .fix {
+    overflow: hidden;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  a,
+  .button {
+    cursor: pointer !important;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+  }
+
+  a:focus,
+  .button:focus {
+    text-decoration: none;
+    outline: none;
+  }
+
+  a {
+    color: #635c5c;
+  }
+
+  a:hover {
+    color: #fff;
+  }
+
+  a:focus,
+  a:hover,
+  .portfolio-cat a:hover,
+  .footer -menu li a:hover {
+    text-decoration: none;
+  }
+
+  a,
+  button {
+    color: #fff;
+    outline: medium none;
+  }
+
+  button:focus,
+  input:focus,
+  input:focus,
+  textarea,
+  textarea:focus {
+    outline: 0;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  input:focus::-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    color: inherit;
+  }
+
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  hr {
+    border-bottom: 1px solid #eceff8;
+    border-top: 0 none;
+    margin: 30px 0;
+    padding: 0;
+  }
+
+  .theme-overlay {
+    position: relative;
+  }
+
+  .theme-overlay::before {
+    background: #1696e7 none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .overlay {
+    position: relative;
+    z-index: 0;
+  }
+
+  .overlay::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .overlay2 {
+    position: relative;
+    z-index: 0;
+  }
+
+  .overlay2::before {
+    position: absolute;
+    content: "";
+    background-color: #2e2200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  .section-padding {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .separator {
+    border-top: 1px solid #f2f2f2;
+  }
+
+  .mb-90 {
+    margin-bottom: 90px;
+  }
+
+  @media (max-width: 767px) {
+    .mb-90 {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991px) {
+    .mb-90 {
+      margin-bottom: 45px;
+    }
+  }
+
+  .owl-carousel .owl-nav div {
+    background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+    height: 40px;
+    left: 20px;
+    line-height: 40px;
+    font-size: 22px;
+    color: #646464;
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+    width: 40px;
+  }
+
+  .owl-carousel .owl-nav div.owl-next {
+    left: auto;
+    right: -30px;
+  }
+
+  .owl-carousel .owl-nav div.owl-next i {
+    position: relative;
+    right: 0;
+    top: 1px;
+  }
+
+  .owl-carousel .owl-nav div.owl-prev i {
+    position: relative;
+    right: 1px;
+    top: 0px;
+  }
+
+  .owl-carousel:hover .owl-nav div {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .owl-carousel:hover .owl-nav div:hover {
+    color: #fff;
+    background: #ff3500;
+  }
+
+  .btn {
+    background: $primary;
+    -moz-user-select: none;
+    text-transform: capitalize;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 0;
+    margin-bottom: 0;
+    padding: 27px 44px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+  }
+
+  .btn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #496847;
+    z-index: 1;
+    border-radius: 5px;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+    border-radius: 0;
+  }
+
+  .btn:hover::before {
+    transform: scaleX(1);
+    color: #fff !important;
+    z-index: -1;
+  }
+
+  .btn-white {
+    background: #fff;
+    -moz-user-select: none;
+    text-transform: capitalize;
+    color: $primary;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 0;
+    margin-bottom: 0;
+    padding: 27px 44px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+  }
+
+  .btn-white::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #f7f7f7;
+    z-index: 1;
+    border-radius: 5px;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+    border-radius: 0;
+  }
+
+  .btn-white:hover::before {
+    transform: scaleX(1);
+    color: #fff !important;
+    z-index: -1;
+  }
+
+  .btn-gold {
+    background: $gold;
+    -moz-user-select: none;
+    text-transform: capitalize;
+    color: $primary;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 0;
+    margin-bottom: 0;
+    padding: 27px 44px;
+    margin: 10px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0px;
+  }
+
+  .btn-gold::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: darken($gold, 15%);
+    z-index: 1;
+    border-radius: 5px;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+    border-radius: 0;
+  }
+
+  .btn-gold:hover::before {
+    transform: scaleX(1);
+    color: #000 !important;
+    z-index: -1;
+  }
+
+  .btn2 {
+    padding: 45px 94px;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 1200px) and (max-width: 1300px) {
+    .btn2 {
+      padding: 45px 70px;
+    }
+  }
+
+  .btn-black {
+    background: #0b1416;
+  }
+
+  .btn.focus,
+  .btn:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .border-btn {
+    border: 2px solid $primary;
+    color: $primary;
+    font-family: $font-secondary;
+    background: none;
+    border-radius: 5px;
+    -moz-user-select: none;
+    padding: 28px 50px;
+    margin: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-content;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    position: relative;
+    transition: color 0.4s linear;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .border-btn::before {
+    border: 2px solid transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: -1;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleY(0);
+    border-radius: 0;
+  }
+
+  .border-btn:hover::before {
+    transform: scaleY(1);
+    order: 2px solid transparent;
+  }
+
+  .send-btn {
+    background: $primary;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .send-btn::before {
+    border: 2px solid transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #e6373d;
+    color: $primary;
+    z-index: -1;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleX(0);
+  }
+
+  .send-btn:hover::before {
+    transform: scaleY(1);
+    order: 2px solid transparent;
+    color: red;
+  }
+
+  .breadcrumb > .active {
+    color: #888;
+  }
+
+  #scrollUp {
+    background: $primary;
+    height: 50px;
+    width: 50px;
+    right: 31px;
+    bottom: 18px;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 48px;
+    border: 2px solid transparent;
+    box-shadow: $box-shadow;
+  }
+
+  @media (max-width: 767px) {
+    #scrollUp {
+      right: 16px;
+    }
+  }
+
+  #scrollUp:hover {
+    color: #fff;
+  }
+
+  .sticky-bar {
+    left: 0;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    z-index: 9999;
+    -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+    -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+    background: #fff;
   }
 </style>

@@ -1,11 +1,11 @@
 ---
 ---
 
-<header class="absolute top-0 left-0">
+<header class="sticky top-0 z-10 h-0">
   <nav class="flex flex-wrap items-center justify-end w-full p-3 h-fit">
     <div class="flex items-center text-center transition-all duration-500">
       <ul
-        class="fixed top-0 flex flex-col items-center justify-center w-[101%] h-full m-0 mx-auto text-center duration-500 gap-7 bg-neutral-900 md:bg-transparent bg-opacity-90 md:right-0 -right-full nav-menu md:relative md:items-end md:text-left"
+        class="fixed top-0 flex flex-col items-center justify-center w-full h-full m-0 mx-auto text-center duration-500 gap-7 bg-neutral-900 md:bg-transparent bg-opacity-90 md:right-0 -right-full nav-menu md:relative md:items-end md:text-left"
       >
         <li class="nav-item">
           <a
@@ -16,23 +16,20 @@
         </li>
         <li class="nav-item">
           <a
-            href="/blog"
+            href="/about"
             class="text-3xl font-semibold text-white duration-500 md:text-black hover:text-blue-700"
-            >Blog</a
+            >Om oss</a
           >
         </li>
       </ul>
     </div>
 
-    <div class="absolute right-0 mr-5 top-9 hamburger md:hidden">
-      <span
-        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+    <div class="absolute left-0 ml-5 top-9 hamburger md:hidden">
+      <span class="m-1.5 duration-500 bar w-10 h-1 block bg-black rounded-full"
       ></span>
-      <span
-        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+      <span class="m-1.5 duration-500 bar w-10 h-1 block bg-black rounded-full"
       ></span>
-      <span
-        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+      <span class="m-1.5 duration-500 bar w-10 h-1 block bg-black rounded-full"
       ></span>
     </div>
   </nav>
@@ -60,13 +57,72 @@
 </script>
 
 <style>
+  .hero-parallax {
+    background: rgb(228, 255, 253);
+    background: -moz-linear-gradient(
+      0deg,
+      rgba(228, 255, 253, 1) 0%,
+      rgba(244, 239, 230, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      0deg,
+      rgba(228, 255, 253, 1) 0%,
+      rgba(244, 239, 230, 1) 100%
+    );
+    background: linear-gradient(
+      0deg,
+      rgba(228, 255, 253, 1) 0%,
+      rgba(244, 239, 230, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e4fffd",endColorstr="#f4efe6",GradientType=1);
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #text {
+      position: absolute;
+      font-size: 65px;
+      line-height: 1.25;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: 10;
+
+      background: rgb(244, 239, 230);
+      background: -moz-linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      background: -webkit-linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      background: linear-gradient(
+        180deg,
+        rgba(244, 239, 230, 0) 0%,
+        rgba(244, 239, 230, 1) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f4efe6",endColorstr="#f4efe6",GradientType=1);
+    }
+  }
   @media (max-width: 768px) {
     .active .bar:nth-child(2) {
       opacity: 0;
     }
     .active .bar:nth-child(1) {
       -webkit-transform: translateY(8px) rotate(-315deg);
-      transform: translateY(8px) rotate(-315deg);
+      transform: translateY(10px) rotate(-315deg);
       background-color: white;
     }
     .active .bar:nth-child(3) {
