@@ -1,0 +1,83 @@
+---
+---
+
+<header class="fixed right-5 top-5">
+  <nav class="flex flex-wrap items-center justify-end w-full p-3 h-fit">
+    <div class="flex items-center text-center transition-all duration-500">
+      <ul
+        class="fixed top-0 flex flex-col items-center justify-center w-full h-full m-0 mx-auto text-center duration-500 gap-7 bg-neutral-900 bg-opacity-90 md:right-0 -right-full nav-menu md:relative md:items-end md:text-left"
+      >
+        <li class="nav-item">
+          <a
+            href="/"
+            class="text-3xl font-semibold text-white duration-500 hover:text-blue-700"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            href="/blog"
+            class="text-3xl font-semibold text-white duration-500 hover:text-blue-700"
+            >Blog</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="hamburger md:hidden">
+      <span
+        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+      ></span>
+      <span
+        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+      ></span>
+      <span
+        class="m-1.5 duration-500 bar w-6 h-[3px] block bg-black rounded-full"
+      ></span>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    });
+  }
+
+  if (hamburger && navMenu) {
+    document.querySelectorAll(".nav-link").forEach((link) =>
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      })
+    );
+  }
+</script>
+
+<style>
+  @media (max-width: 768px) {
+    .active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .active .bar:nth-child(1) {
+      -webkit-transform: translateY(8px) rotate(-315deg);
+      transform: translateY(8px) rotate(-315deg);
+      background-color: white;
+    }
+    .active .bar:nth-child(3) {
+      -webkit-transform: translateY(-10px) rotate(-45deg);
+      transform: translateY(-10px) rotate(-45deg);
+      background-color: white;
+    }
+    .active {
+      right: 0;
+      z-index: 100;
+      transition: 0.2s ease;
+    }
+  }
+</style>
