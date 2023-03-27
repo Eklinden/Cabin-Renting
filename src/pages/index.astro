@@ -3,18 +3,94 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="StugaAstrom">
-  <section
-    class="flex items-center justify-center w-full h-[80vh] bg-fixed bg-center bg-no-repeat bg-cover"
-    style="background-image: url(../../../../public/heroImage.jpg)"
-  >
-    <h1 class="parallax-fade-top">lols</h1>
-  </section>
+  <div class="scrollDist"></div>
+  <div class="main">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <mask id="m">
+        <g class="cloud1">
+          <rect fill="#fff" width="100%" height="801" y="799"></rect>
+          <image
+            xlink:href="https://assets.codepen.io/721952/cloud1Mask.jpg"
+            width="1200"
+            height="800"
+          />
+        </g>
+      </mask>
+
+      <image class="sky" xlink:href="../../public/heroImage.png" width="1300" />
+      <image
+        class="mountMg"
+        xlink:href="https://assets.codepen.io/721952/mountMg.png"
+        width="1200"
+        height="800"
+      />
+      <image
+        class="cloud2"
+        xlink:href="https://assets.codepen.io/721952/cloud2.png"
+        width="1200"
+        height="800"
+      />
+      <image
+        class="mountFg"
+        xlink:href="https://assets.codepen.io/721952/mountFg.png"
+        width="1200"
+        height="800"
+      />
+      <image
+        class="cloud1"
+        xlink:href="https://assets.codepen.io/721952/cloud1.png"
+        width="1200"
+        height="800"
+      />
+      <image
+        class="cloud3"
+        xlink:href="https://assets.codepen.io/721952/cloud3.png"
+        width="1200"
+        height="800"
+      />
+      <text
+        class="flex items-center justify-center text-7xl"
+        fill="#fff"
+        x="100"
+        y="200">VÄLKOMMEN</text
+      >
+
+      <g mask="url(#m)">
+        <rect fill="#fff" width="100%" height="100%"></rect>
+        <text
+          class="flex items-center justify-center text-7xl"
+          x="100"
+          y="200"
+          fill="#162a43">OM OSS</text
+        >
+      </g>
+
+      <rect
+        id="arrowBtn"
+        width="100"
+        height="100"
+        opacity="0"
+        x="550"
+        y="220"
+        style="cursor:pointer"></rect>
+    </svg>
+  </div>
 </Layout>
 
 <style>
-  .hero {
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+  body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  text {
+    font-size: 99px;
+    position: absolute;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
   }
 </style>

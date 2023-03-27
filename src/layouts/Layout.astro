@@ -14,7 +14,6 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="../global/global.css" />
     <title>{title}</title>
   </head>
   <body>
@@ -42,6 +41,76 @@ const { title } = Astro.props;
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   }
   body {
-    min-height: 100vh;
+    min-height: 300vh;
   }
 </style>
+
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.set(".main", {
+    position: "fixed",
+    background: "#fff",
+    width: "100%",
+    height: "100%",
+    top: -5,
+    left: "50%",
+    x: "-50%",
+  });
+  gsap.set(".scrollDist", { width: "100%", height: "200%" });
+  gsap.set(".cloud1", {
+    y: 100,
+  });
+  gsap.set(".cloud2", { y: 150 });
+  gsap.set(".cloud3", { y: 0 });
+  gsap.set(".mountMg", { y: 50 });
+  gsap.set(".mountFg", { y: 50 });
+  gsap.to(".cloud1", {
+    y: -800,
+    scrollTrigger: {
+      trigger: "",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+  gsap.to(".cloud2", {
+    y: -500,
+    scrollTrigger: {
+      trigger: "",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+  gsap.to(".cloud3", {
+    y: -650,
+    scrollTrigger: {
+      trigger: "",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+  gsap.to(".mountMg", {
+    y: -250,
+    scrollTrigger: {
+      trigger: "",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+  gsap.to(".mountFg", {
+    y: -600,
+    scrollTrigger: {
+      trigger: "",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+    },
+  });
+</script>
