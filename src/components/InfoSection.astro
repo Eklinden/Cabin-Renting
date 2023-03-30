@@ -1,0 +1,51 @@
+---
+import topFloorIcon from "../assets/OVicon.svg";
+import bottomFloorIcon from "../assets/BVicon.svg";
+---
+
+<section>
+  <h2 class="mb-5 text-2xl text-center">OM STUGAN</h2>
+  <div
+    class="grid grid-cols-1 gap-8 p-2 mx-auto text-center md:grid-cols-2 md:pl-6 max-w-7xl"
+  >
+    <p class="pb-8 border-b-2 md:border-b-0 md:border-r-2">
+      Ett klassiskt timmerhus med <span class="text-xl text-blue-600">2</span> lägenheter.
+      <br /> Möjlighet finns att hyra lägenheterna var för sig alternativt båda tillsammans.
+    </p>
+    <article class="text-start">
+      <div class="flex justify-between border-b-2 pb-8">
+        <div>
+          <span>Övre lägenheten:</span>
+          <ul>
+            <li>- 8 bäddar</li>
+            <li>- 80 kvm (ink loft)</li>
+            <li>- Öppen spis (ved finns)</li>
+          </ul>
+        </div>
+        <img src={topFloorIcon} class="w-20" />
+      </div>
+      <br />
+      <div class="flex justify-between">
+        <div>
+          <span>Nedre lägenheten:</span>
+          <ul>
+            <li>- 5 bäddar</li>
+            <li>- 42 kvm</li>
+          </ul>
+        </div>
+        <img src={bottomFloorIcon} class="w-20" />
+      </div>
+      <div class="flex flex-col mt-12 items-center gap-2">
+        <span class="text-sm font-normal text-gray-500"
+          >Vill du vilja veta mer om lägenheterna?</span
+        >
+        <a
+          href="/apartments"
+          class="bg-blue-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-blue-800 w-fit"
+        >
+          Klicka här
+        </a>
+      </div>
+    </article>
+  </div>
+</section>

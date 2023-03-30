@@ -1,37 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import InfoSection from "../components/InfoSection.astro";
+import Calendar from "../components/Calendar.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="StugaAstrom">
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl mx-auto flex flex-col gap-14">
     <Hero />
-    <!-- FRASE EMOZIONALE -->
-    <section>
-      <h5 class="mt-4 mb-5 text-2xl text-center">Om stugan</h5>
-      <div
-        class="grid grid-cols-1 gap-8 p-2 mx-auto text-center md:grid-cols-2 md:text-left md:pl-6 max-w-7xl"
-      >
-        <p class="pb-8 border-b-2 md:border-b-0 md:border-r-2">
-          Ett klassiskt timmerhus med två plan med tillhörande loft. <br /> Möjlighet
-          finns att hyra lägenheterna var för sig alternativt båda tillsammans.
-        </p>
-        <span>
-          Övre lägenheten:
-          <ul>
-            <li>- 8 bäddar</li>
-            <li>- 80 kvm (ink loft)</li>
-            <li>- Öppen spis (ved finns)</li>
-          </ul>
-          <br />
-          Nedre lägenheten:
-          <ul>
-            <li>- 5 bäddar</li>
-            <li>- 42 kvm</li>
-          </ul>
-        </span>
-      </div>
-    </section>
+    <InfoSection />
+    <Calendar />
+    <Contact />
   </div>
 </Layout>
 
