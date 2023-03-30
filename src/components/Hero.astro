@@ -1,20 +1,37 @@
 ---
 import heroImage from "../assets/heroImage.jpg";
+import landscapeHeroImage from "../assets/landscapeStuga.jpg";
 import mountMg from "../assets/mountMg.jpg";
-import mountFg from "../assets/mountFg.jpg";
 ---
 
-<div class="relative grid grid-cols-2 p-2 min-h-[340px] md:min-h-fit md:mt-32">
-  <div class="flex flex-col gap-4 items-start justify-center">
-    <div class="w-20 h-2 bg-blue-600 rounded-full"></div>
-    <h1 class="text-xl md:text-3xl z-10 mb-20 md:mb-40">
+<div
+  class="relative grid grid-cols-2 p-2 lg:p-6 min-h-[340px] md:min-h-fit md:mt-32"
+>
+  <div class="lg:justify-start flex flex-col items-start justify-center gap-4">
+    <div class="lg:w-32 w-20 h-2 bg-blue-600 rounded-full"></div>
+    <h1 class="md:text-3xl md:mb-40 lg:mb-6 lg:text-5xl z-10 mb-20 text-xl">
       <span>Välkommen</span> till <br /> Lindvallsstugan
     </h1>
+    <div class="lg:flex hidden gap-2">
+      <a
+        href="#"
+        class="bg-blue-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-blue-700"
+      >
+        Boka nu
+      </a>
+      <a
+        href="/apartments"
+        class="hover:text-blue-700 px-4 py-2 text-lg text-blue-600 bg-white rounded-full"
+      >
+        Läs mer
+      </a>
+    </div>
   </div>
-  <div class="flex justify-center items-center">
-    <img class="rounded-xl max-h-80" src={heroImage} />
+  <div class="flex items-center justify-center">
+    <img class="rounded-xl max-h-80 lg:hidden" src={heroImage} />
+    <img class="rounded-xl max-h-80 lg:block hidden" src={landscapeHeroImage} />
     <img
-      class="absolute bottom-0 left-0 h-4/6 mountMg lg:hidden"
+      class="h-4/6 mountMg lg:hidden absolute bottom-0 left-0"
       src={mountMg}
     />
   </div>
