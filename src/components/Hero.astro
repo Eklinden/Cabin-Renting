@@ -1,6 +1,7 @@
 ---
 import heroImage from "../assets/heroImage.jpg";
 import landscapeHeroImage from "../assets/landscapeStuga.jpg";
+import skiierIcon from "../assets/skiierIcon.png";
 import mountMg from "../assets/mountMg.jpg";
 ---
 
@@ -9,13 +10,13 @@ import mountMg from "../assets/mountMg.jpg";
 >
   <div class="lg:justify-start flex flex-col items-start justify-center gap-4">
     <div class="lg:w-32 w-20 h-2 bg-blue-600 rounded-full"></div>
-    <h1 class="md:text-3xl md:mb-40 lg:mb-6 lg:text-5xl z-10 mb-20 text-xl">
+    <h1 class="md:text-3xl md:mb-40 lg:mb-6 lg:text-5xl mb-20 text-xl">
       <span>Välkommen</span> till <br /> Lindvallsstugan
     </h1>
     <div class="lg:flex hidden gap-2">
       <a
         href="#"
-        class="bg-blue-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-blue-700"
+        class="bg-blue-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-blue-800"
       >
         Boka nu
       </a>
@@ -29,7 +30,13 @@ import mountMg from "../assets/mountMg.jpg";
   </div>
   <div class="flex items-center justify-center">
     <img class="rounded-xl max-h-80 lg:hidden" src={heroImage} />
-    <img class="rounded-xl max-h-80 lg:block hidden" src={landscapeHeroImage} />
+    <div class="rounded-xl max-h-80 lg:block relative hidden">
+      <img
+        class="rounded-xl max-h-80 lg:block hidden"
+        src={landscapeHeroImage}
+      />
+      <img class="-top-12 -left-10 w-28 absolute" src={skiierIcon} />
+    </div>
     <img
       class="h-4/6 mountMg lg:hidden absolute bottom-0 left-0"
       src={mountMg}
