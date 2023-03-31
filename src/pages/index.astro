@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import InfoSection from "../components/InfoSection.astro";
-// import Calendar from "../components/Calendar/Calendar.jsx";
+import CustomCalendar from "../components/CustomCalendar/CustomCalendar.jsx";
 import Contact from "../components/Contact.astro";
 ---
 
@@ -10,8 +10,8 @@ import Contact from "../components/Contact.astro";
   <div class="grid">
     <Hero />
     <InfoSection />
-    <div class="grid grid-cols-1">
-      <!-- <Calendar /> -->
+    <div class="gap-14 md:grid-cols-2 grid">
+      <CustomCalendar />
       <Contact />
     </div>
   </div>
