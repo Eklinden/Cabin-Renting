@@ -2,16 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import InfoSection from "../components/InfoSection.astro";
-import Calendar from "../components/Calendar.astro";
+import Calendar from "../components/Calendar/Calendar.jsx";
 import Contact from "../components/Contact.astro";
 ---
 
 <Layout title="StugaAstrom">
-  <div class="max-w-7xl mx-auto flex flex-col gap-14">
+  <div class="grid gap-14">
     <Hero />
     <InfoSection />
-    <Calendar />
-    <Contact />
+    <div class="grid grid-cols-2">
+      <Calendar />
+      <Contact />
+    </div>
   </div>
 </Layout>
 
