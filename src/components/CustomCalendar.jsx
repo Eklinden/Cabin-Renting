@@ -15,7 +15,7 @@ import {
 } from "date-fns";
 import { sv } from "date-fns/locale/index.js";
 import { useEffect, useState } from "react";
-import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
+import { BiChevronLeft, BiChevronRight } from "react-icons/bi/index.js";
 import { db } from "../../FirebaseService";
 import { collection, onSnapshot } from "firebase/firestore";
 
