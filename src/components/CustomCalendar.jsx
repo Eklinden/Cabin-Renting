@@ -13,7 +13,7 @@ import {
   startOfDay,
   startOfMonth,
 } from "date-fns";
-import { sv } from "date-fns/locale";
+import { sv } from "date-fns/locale/index.js";
 import { useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { db } from "../../FirebaseService";
