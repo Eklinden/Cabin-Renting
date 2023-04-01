@@ -122,6 +122,7 @@ const Contact = ({ floor, form, setForm }) => {
                 name="option"
                 value={"Övervåning"}
                 onChange={handleChange}
+                checked
               />
               <label
                 htmlFor="option3"
