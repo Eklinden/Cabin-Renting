@@ -1,7 +1,9 @@
 import emailjs from "@emailjs/browser";
 import swal from "sweetalert";
+import { useState } from "react";
 
 const Contact = ({ floor, form, setForm }) => {
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
@@ -9,6 +11,7 @@ const Contact = ({ floor, form, setForm }) => {
 
   function sendEmail(e) {
     e.preventDefault();
+    setLoading(true);
     emailjs
       .send(
         "service_ip2rne9",
@@ -32,6 +35,7 @@ const Contact = ({ floor, form, setForm }) => {
             icon: "success",
             button: "tillbaka",
           });
+          setLoading(false);
           setForm({
             name: "",
             email: "",
@@ -44,6 +48,7 @@ const Contact = ({ floor, form, setForm }) => {
           console.log(result.text);
         },
         (error) => {
+          setLoading(false);
           swal({
             title: "Oops! Något gick fel!",
             text: "Vänligen försök igen",
@@ -145,7 +150,10 @@ const Contact = ({ floor, form, setForm }) => {
             value={form.email}
             onChange={handleChange}
             placeholder="Email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="don't include capital letters: characters@characters.domain"
             className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full h-8 p-0 placeholder-transparent bg-transparent border-none"
+            required
           />
           <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
             Email
@@ -161,8 +169,12 @@ const Contact = ({ floor, form, setForm }) => {
             name="name"
             value={form.name}
             placeholder="Förnamn och efternamn"
+            maxLength={100}
+            pattern="^(\w\w+)\s(\w+)$"
+            title="firstName LastName"
             onChange={handleChange}
             className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full h-8 p-0 placeholder-transparent bg-transparent border-none"
+            required
           />
           <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
             Förnamn och efternamn
@@ -180,6 +192,7 @@ const Contact = ({ floor, form, setForm }) => {
               onChange={handleChange}
               value={form.fromDate}
               className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full h-8 p-0 placeholder-transparent bg-transparent border-none"
+              required
             />
             <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
               Från
@@ -196,6 +209,7 @@ const Contact = ({ floor, form, setForm }) => {
               value={form.toDate}
               onChange={handleChange}
               className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full h-8 p-0 placeholder-transparent bg-transparent border-none"
+              required
             />
             <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
               Till
@@ -213,13 +227,14 @@ const Contact = ({ floor, form, setForm }) => {
             rows={6}
             value={form.message}
             className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full p-0 placeholder-transparent bg-transparent border-none resize-none"
+            required
           ></textarea>
           <span className="top-2 peer-placeholder-shown:top-5 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
             Meddelande
           </span>
         </label>
         <button className="bg-indigo-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-indigo-800 w-fit">
-          Skicka meddelande
+          {loading === true ? "skickar meddelande..." : "Skicka meddelande"}
         </button>
       </form>
     </div>

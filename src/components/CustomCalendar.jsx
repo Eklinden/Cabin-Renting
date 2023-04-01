@@ -11,13 +11,13 @@ import {
   isToday,
   parse,
   startOfDay,
-  startOfMonth,
 } from "date-fns";
 import { sv } from "date-fns/locale/index.js";
 import { useEffect, useState } from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi/index.js";
-import { db } from "../../FirebaseService";
+import { db, auth } from "../../FirebaseService";
 import { collection, onSnapshot } from "firebase/firestore";
+import { onAuthStateChanged } from "firebase/auth";
 
 const today = startOfDay(new Date());
 function classNames(...classes) {
@@ -28,6 +28,17 @@ const CustomCalendar = ({ form, setForm, floor }) => {
   const [selectedDay, setSelectedDay] = useState(today);
   const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
   const [rentings, setRentings] = useState([]);
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
+
   let firstDayOfCurrentMonth = parse(currentMonth, "MMM-yyyy", today);
 
   let days = eachDayOfInterval({
@@ -72,31 +83,41 @@ const CustomCalendar = ({ form, setForm, floor }) => {
     <div className="sm:p-14 mx-auto">
       {floor === "both" && (
         <>
-          <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-            Kalender för att hyra båda Lägenheterna
-          </h2>
-          <div className="flex flex-wrap mb-5">
-            <div className="flex-grow">
-              <a
-                href="/topApartment"
-                className="hover:text-indigo-800 text-indigo-500"
-              >
-                Till övre Lägenheten
-              </a>
-              <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
-            </div>
-            <div className="flex-grow">
-              <a
-                href="/bottomApartment"
-                className="hover:text-indigo-800 text-indigo-500"
-              >
-                Till nedre Lägenheten
-              </a>
-              <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
-            </div>
-          </div>
+          {user === null && (
+            <>
+              <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
+                Kalender för att hyra båda Lägenheterna
+              </h2>
+              <div className="flex flex-wrap mb-5">
+                <div className="flex-grow">
+                  <a
+                    href="/topApartment"
+                    className="hover:text-indigo-800 text-indigo-500"
+                  >
+                    Till övre Lägenheten
+                  </a>
+                  <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
+                </div>
+                <div className="flex-grow">
+                  <a
+                    href="/bottomApartment"
+                    className="hover:text-indigo-800 text-indigo-500"
+                  >
+                    Till nedre Lägenheten
+                  </a>
+                  <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
+                </div>
+              </div>
+            </>
+          )}
+          {user && (
+            <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
+              Kalender för alla uthyrningar
+            </h2>
+          )}
         </>
       )}
+      {floor === "bottom" && user && <h2>Kalender över alla månader</h2>}
       {floor === "bottom" && (
         <>
           <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">

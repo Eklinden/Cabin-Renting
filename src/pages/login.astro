@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Login from "../components/Login.jsx";
+import AddRentings from "../components/AddRentings";
+---
+
+<Layout title={"Login"}>
+  <AddRentings client:load />
+  <Login client:load />
+</Layout>
