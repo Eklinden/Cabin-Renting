@@ -1,9 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Welcome to Blog.">
-  <main>
-    <h1>This is Blog yes</h1>
-  </main>
+  <section class="bg-gray-50">
+    <div
+      class="lg:flex lg:h-screen lg:items-center max-w-screen-xl px-4 py-32 mx-auto"
+    >
+      <div class="max-w-2xl mx-auto text-center">
+        <h1 class="sm:text-5xl text-3xl font-extrabold">
+          Vilken är den bästa stugan?
+          <strong class="sm:block font-extrabold text-indigo-700">
+            Lindvallsstugan!
+          </strong>
+        </h1>
+
+        <p class="sm:text-xl sm:leading-relaxed mt-4">
+          Här kommer det stå en massa rolig text
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
+<!-- <main class="mt-40">
+    <form action="" class="add">
+      <label for="fromDate"></label>
+      <input type="date" name="fromDate" required />
+      <label for="toDate"></label>
+      <input type="date" name="toDate" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <form action="" class="delete">
+      <label for="id">document Id:</label>
+      <input type="text" name="id" required />
+      <button type="submit">Delete</button>
+    </form>
+  </main> -->
+<Footer />
+
+<script>
+  import { addDoc, deleteDoc, doc } from "firebase/firestore";
+  import { colRef, db } from "../../FirebaseService";
+  const addForm = document.querySelector(".add");
+  addForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    addDoc(colRef, {
+      fromDate: addForm.fromDate.value,
+      toDate: addForm.toDate.value,
+    })
+      .then((docRef) => {
+        addForm.reset();
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
+  });
+
+  const deleteForm = document.querySelector(".delete");
+  deleteForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const id = deleteForm.id.value;
+    const docRef = doc(db, "rentings", id);
+
+    deleteDoc(docRef)
+      .then(() => {
+        deleteForm.reset();
+        console.log("Document successfully deleted!");
+      })
+      .catch((error) => {
+        console.error("Error removing document: ", error);
+      });
+  });
+</script>

@@ -4,7 +4,7 @@ import bottomFloorIcon from "../assets/BVicon.svg";
 import landscapeStuga from "../assets/landscapeStuga.jpg";
 ---
 
-<section>
+<section id="moreInfo">
   <div class="max-w-screen-2xl sm:px-6 lg:px-8 px-4 py-16 mx-auto">
     <div class="lg:h-screen lg:grid-cols-2 grid grid-cols-1">
       <div class="lg:py-16 relative z-10">
@@ -26,7 +26,7 @@ import landscapeStuga from "../assets/landscapeStuga.jpg";
 
         <div class="sm:p-16 lg:p-24 p-8">
           <article class="text-start">
-            <div class="flex justify-between pb-8 border-b-2">
+            <div class="flex justify-between">
               <div>
                 <span>Övre lägenheten:</span>
                 <ul>
@@ -35,10 +35,18 @@ import landscapeStuga from "../assets/landscapeStuga.jpg";
                   <li>- Öppen spis (ved finns)</li>
                 </ul>
               </div>
-              <img src={topFloorIcon} class="w-20" />
+              <img src={topFloorIcon} class="w-20 h-20" />
+            </div>
+            <div class="flex flex-col items-center gap-2 mt-12 text-left">
+              <a
+                href="/topApartment"
+                class="hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 inline-block px-12 py-3 text-sm font-medium text-white bg-indigo-600 border border-indigo-600 rounded"
+              >
+                Info om övre lägenheten
+              </a>
             </div>
             <br />
-            <div class="flex justify-between">
+            <div class="flex justify-between pt-8 border-t-2">
               <div>
                 <span>Nedre lägenheten:</span>
                 <ul>
@@ -46,17 +54,14 @@ import landscapeStuga from "../assets/landscapeStuga.jpg";
                   <li>- 42 kvm</li>
                 </ul>
               </div>
-              <img src={bottomFloorIcon} class="w-20" />
+              <img src={bottomFloorIcon} class="w-20 h-20" />
             </div>
-            <div class="flex flex-col items-center gap-2 mt-12">
-              <span class="text-sm font-normal text-gray-500"
-                >Vill du vilja veta mer om lägenheterna?</span
-              >
+            <div class="flex flex-col items-center gap-2 mt-12 text-left">
               <a
-                href="/apartments"
+                href="/bottomApartment"
                 class="hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 inline-block px-12 py-3 text-sm font-medium text-white bg-indigo-600 border border-indigo-600 rounded"
               >
-                Klicka här
+                Info om nedre lägenheten
               </a>
             </div>
           </article>

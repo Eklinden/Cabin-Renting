@@ -1,0 +1,176 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactSection from "../components/ContactSection";
+import { FaAccessibleIcon, FaWifi } from "react-icons/fa";
+import { ImEnlarge2 } from "react-icons/im";
+import { TbToolsKitchen2 } from "react-icons/tb";
+import { BsShieldLockFill } from "react-icons/bs";
+import { RiErrorWarningLine } from "react-icons/ri";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title={"Övre våning"}>
+  <section
+    class="bg-gray-50 sm:grid sm:grid-cols-2 sm:items-center mt-10 overflow-hidden"
+  >
+    <div class="md:p-12 lg:px-16 lg:py-24 p-8">
+      <div class="sm:text-left max-w-xl mx-auto text-center">
+        <h2 class="md:text-3xl text-2xl font-bold text-gray-900">
+          Övre våningen
+        </h2>
+
+        <p class="md:mt-4 md:block hidden text-gray-500">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas
+          tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim
+          et fermentum, augue. Aliquet amet volutpat quisque ut interdum
+          tincidunt duis.
+        </p>
+
+        <div class="md:mt-8 mt-4">
+          <a
+            href="#"
+            class="bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring focus:ring-yellow-400 inline-block px-12 py-3 text-sm font-medium text-white transition rounded"
+          >
+            Get Started Today
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <img
+      alt="Violin"
+      src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+      class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-tl-[30px] md:h-[calc(100%_-_4rem)] md:rounded-tl-[60px]"
+    />
+  </section>
+  <section class="mt-12 text-white bg-indigo-900">
+    <div class="sm:py-12 sm:px-6 lg:py-16 lg:px-8 max-w-screen-xl px-4 py-8">
+      <div class="max-w-xl">
+        <h2 class="sm:text-4xl text-3xl font-bold">Vad ingår i lägenheten?</h2>
+
+        <p class="mt-4 text-gray-300">
+          Stugan är rökfri och har Yale-lås med personlig veckokod för alla
+          gäster. <br /> Vatten, hushållsel och motorvärmare ingår. I närheten finns
+          fina vandringsleder, skoterled och skid- och badbuss precis utanför huset.
+          En 10-minuters promenad tar dig till Sälfjällstorget med många restauranger
+          och affärer.
+        </p>
+      </div>
+
+      <div
+        class="md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3 grid grid-cols-1 gap-8 mt-8"
+      >
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <ImEnlarge2 fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">Storlek</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              - <span class="font-bold">80</span> kvm (ink loftet)
+              <br /> - <span class="font-bold">8</span> bäddar
+              <br /> - <span class="font-bold">2</span> dubbelsängar
+              <br /> - <span class="font-bold">1</span> våningssäng
+              <br /> - <span class="font-bold">1</span> kontinentalsäng (180 cm)
+              <br /> - <span class="font-bold">1</span> badrum med dusch och toalett.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <FaWifi fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">Internet</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              - Internet <span class="font-bold">FINNS</span> tillgängligt
+              <br /> - <span class="font-bold">WIFI-lösenord</span> ges ut på plats
+              <br /> - <span class="font-bold">1</span> TV på loftet och <span
+                class="font-bold">1</span
+              > i vardagsrummet
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <TbToolsKitchen2 fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">Kök</h2>
+
+            <div class="grid grid-cols-2">
+              <p class="mt-1 text-sm text-gray-300">
+                - <span class="font-bold">Kylskåp</span>
+                <br /> - <span class="font-bold">Ugn</span>
+                <br /> - <span class="font-bold">Spis</span>
+                <br /> - <span class="font-bold">Kaffebryggare</span>
+              </p>
+              <p class="mt-1 text-sm text-gray-300">
+                - <span class="font-bold">Mikrovågsugn</span>
+                <br /> - <span class="font-bold">Vattenkokare</span>
+                <br /> - <span class="font-bold">Köksredskap</span>
+                <br /> - <span class="font-bold">Porslin, glas, bestick</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <FaAccessibleIcon fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">Tillgänglighet</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              - <span class="font-bold">Barnstol</span> Finns
+              <br /> - <span class="font-bold">Spjällsäng</span> Finns
+              <br /> - <span class="line-through">Ryllstolsanpassat</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <BsShieldLockFill fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">Säkerhet</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              - <span class="font-bold">Kylskåp</span> Brandvarnare finns i alla
+              rum.
+              <br /> - <span class="font-bold">Yale-lås</span> finns på alla dörrar.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <span class="shrink-0 p-4 bg-gray-800 rounded-lg">
+            <RiErrorWarningLine fontSize={20} />
+          </span>
+
+          <div>
+            <h2 class="text-lg font-bold">REGLER</h2>
+
+            <p class="mt-1 text-sm text-gray-300">
+              - Rökning <span class="font-bold">EJ</span> tillåtet <br /> - husdjur
+              <span class="font-bold">EJ</span> tillåtet
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <ContactSection floor={"top"} client:visible />
+  <Footer />
+</Layout>

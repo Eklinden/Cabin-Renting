@@ -2,18 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import InfoSection from "../components/InfoSection.astro";
-import CustomCalendar from "../components/CustomCalendar/CustomCalendar.jsx";
-import Contact from "../components/Contact.astro";
+import ContactSection from "../components/ContactSection";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="StugaAstrom">
   <div class="grid">
     <Hero />
     <InfoSection />
-    <div class="gap-14 md:grid-cols-2 grid">
-      <CustomCalendar />
-      <Contact />
-    </div>
+    <ContactSection floor={"both"} client:visible />
+    <Footer />
   </div>
 </Layout>
 
@@ -25,5 +23,9 @@ import Contact from "../components/Contact.astro";
     height: 100%;
     background: #fff;
     font-family: "Montserrat", sans-serif;
+  }
+  html,
+  body {
+    scroll-behavior: smooth;
   }
 </style>
