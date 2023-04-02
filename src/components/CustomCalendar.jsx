@@ -238,9 +238,7 @@ const CustomCalendar = ({ form, setForm, floor }) => {
             </span>{" "}
             kr / vecka
           </dt>
-          <dd className="text-xs text-gray-500 text-right">
-            Pris baserat på EN lägenhet
-          </dd>
+          <dd className="text-xs text-gray-500 text-right">Per Lägenheten</dd>
         </div>
       </div>
     </div>

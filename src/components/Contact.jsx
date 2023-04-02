@@ -71,8 +71,9 @@ const Contact = ({ floor, form, setForm }) => {
         id="form"
         className="gap-9 flex flex-col px-3 mt-10"
       >
-        <div className="sm:grid-cols-1 grid grid-cols-1 gap-4 text-center">
-          {floor === "both" && (
+        <div className="grid gap-4">
+          <span className=" text-base text-gray-600">Intresserad av : </span>
+          <div className="sm:grid-cols-3 grid grid-cols-1 gap-4 text-center">
             <div>
               <input
                 className="peer sr-only"
@@ -82,18 +83,15 @@ const Contact = ({ floor, form, setForm }) => {
                 name="option"
                 value={"Båda Lägenheterna"}
                 onChange={handleChange}
-                checked
               />
               <label
                 htmlFor="option1"
-                className="hover:border-indigo-600 peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white block w-full p-3 border border-gray-200 rounded-lg"
+                className=" peer-checked:text-indigo-600 peer-checked:border-indigo-600 rounded-xl flex items-center justify-center w-full p-3 border border-gray-200 cursor-pointer"
                 tabIndex={0}
               >
                 <span className="text-sm font-medium"> Båda Lägenheterna</span>
               </label>
             </div>
-          )}
-          {floor === "bottom" && (
             <div>
               <input
                 className="peer sr-only"
@@ -103,18 +101,15 @@ const Contact = ({ floor, form, setForm }) => {
                 name="option"
                 value={"Bottenvåning"}
                 onChange={handleChange}
-                checked
               />
               <label
                 htmlFor="option2"
-                className="hover:border-indigo-600 peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white block w-full p-3 border border-gray-200 rounded-lg"
+                className=" peer-checked:text-indigo-600 peer-checked:border-indigo-600 rounded-xl flex items-center justify-center w-full p-3 border border-gray-200 cursor-pointer"
                 tabIndex={0}
               >
                 <span className="text-sm font-medium"> Bottenvåning</span>
               </label>
             </div>
-          )}
-          {floor === "top" && (
             <div>
               <input
                 className="peer sr-only"
@@ -124,17 +119,16 @@ const Contact = ({ floor, form, setForm }) => {
                 name="option"
                 value={"Övervåning"}
                 onChange={handleChange}
-                checked
               />
               <label
                 htmlFor="option3"
-                className="hover:border-indigo-600 peer-checked:border-indigo-600 peer-checked:bg-indigo-600 peer-checked:text-white block w-full p-3 border border-gray-200 rounded-lg"
+                className=" peer-checked:text-indigo-600 peer-checked:border-indigo-600 rounded-xl flex items-center justify-center w-full p-3 border border-gray-200 cursor-pointer"
                 tabIndex={0}
               >
                 <span className="text-sm font-medium"> Övervåning</span>
               </label>
             </div>
-          )}
+          </div>
         </div>
         <label
           htmlFor="UserEmail"
