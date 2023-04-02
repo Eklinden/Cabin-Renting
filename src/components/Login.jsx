@@ -121,13 +121,6 @@ const login = () => {
                 </button>
               </div>
             </form>
-            <button
-              type="button"
-              onClick={checkAuth}
-              className="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
-            >
-              check auth
-            </button>
           </div>
 
           <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">

@@ -7,7 +7,9 @@ import logo from "../assets/logo.png";
     class="header z-20 flex flex-wrap items-center justify-center w-full pr-6"
   >
     <div class="md:justify-between flex flex-1 max-w-screen-xl">
-      <a href="/"><img src={logo} class="w-20 h-20" /></a>
+      <a class="hidden md:block" href="/"
+        ><img src={logo} class="w-20 h-20" /></a
+      >
       <div class="flex items-center text-center transition-all duration-500">
         <ul
           class="bg-neutral-900 gap-7 md:bg-transparent bg-opacity-90 md:right-0 -right-full nav-menu md:relative md:flex-row fixed top-0 flex flex-col items-center justify-center w-full h-full m-0 mx-auto text-center duration-500"
@@ -45,7 +47,7 @@ import logo from "../assets/logo.png";
     </div>
 
     <div
-      class="max-w-fit rounded-br-xl hamburger md:hidden absolute top-0 right-0 p-3"
+      class="max-w-fit rounded-br-xl hamburger md:hidden absolute top-3 right-4 p-3"
     >
       <span
         class="m-1.5 duration-500 bar w-10 h-1 block bg-gray-900 rounded-full"

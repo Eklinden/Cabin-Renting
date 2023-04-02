@@ -22,58 +22,16 @@ import Footer from "../components/Footer.astro";
       </div>
     </div>
   </section>
+  <Footer />
 </Layout>
-<!-- <main class="mt-40">
-    <form action="" class="add">
-      <label for="fromDate"></label>
-      <input type="date" name="fromDate" required />
-      <label for="toDate"></label>
-      <input type="date" name="toDate" required />
-      <button type="submit">Submit</button>
-    </form>
 
-    <form action="" class="delete">
-      <label for="id">document Id:</label>
-      <input type="text" name="id" required />
-      <button type="submit">Delete</button>
-    </form>
-  </main> -->
-<Footer />
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 
-<script>
-  import { addDoc, deleteDoc, doc } from "firebase/firestore";
-  import { colRef, db } from "../../FirebaseService";
-  const addForm = document.querySelector(".add");
-  addForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    addDoc(colRef, {
-      fromDate: addForm.fromDate.value,
-      toDate: addForm.toDate.value,
-    })
-      .then((docRef) => {
-        addForm.reset();
-        console.log("Document written with ID: ", docRef.id);
-      })
-      .catch((error) => {
-        console.error("Error adding document: ", error);
-      });
-  });
-
-  const deleteForm = document.querySelector(".delete");
-  deleteForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const id = deleteForm.id.value;
-    const docRef = doc(db, "rentings", id);
-
-    deleteDoc(docRef)
-      .then(() => {
-        deleteForm.reset();
-        console.log("Document successfully deleted!");
-      })
-      .catch((error) => {
-        console.error("Error removing document: ", error);
-      });
-  });
-</script>
+  body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+  }
+</style>

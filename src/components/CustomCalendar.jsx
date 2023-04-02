@@ -60,14 +60,7 @@ const CustomCalendar = ({ form, setForm, floor }) => {
     onSnapshot(colRef, (snapshot) => {
       let rentings = [];
       snapshot.forEach((doc) => {
-        if (doc.data().floor === floor || floor === "both") {
-          rentings.push(
-            ...eachDayOfInterval({
-              start: new Date(doc.data().fromDate),
-              end: new Date(doc.data().toDate),
-            })
-          );
-        } else if (doc.data().floor === "both") {
+        if (doc.data().option === floor || doc.data().option === "both") {
           rentings.push(
             ...eachDayOfInterval({
               start: new Date(doc.data().fromDate),
@@ -76,11 +69,12 @@ const CustomCalendar = ({ form, setForm, floor }) => {
           );
         }
       });
+
       setRentings(rentings);
     });
   }, []);
   return (
-    <div className="sm:p-14 mx-auto">
+    <div className="p-2 sm:p-14 mx-auto border-b-2 pb-5 md:border-b-0">
       {floor === "both" && (
         <>
           {user === null && (

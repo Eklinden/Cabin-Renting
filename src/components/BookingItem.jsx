@@ -5,17 +5,15 @@ const BookingItem = ({ renting, handleDelete }) => {
   return (
     <article
       key={renting.id}
-      className="border-b-2 flex justify-between content-center mt-4 gap-3"
+      className="border-b-2 pb-4 flex justify-between content-center mt-4 gap-3"
     >
       <div className="flex flex-wrap items-center justify-between flex-grow gap-1">
         <section>
           <p className="font-bold muted"></p>
-          <p className=" flex gap-2">
-            <span>
-              <MdDateRange className="h-full" />
-            </span>
-            {`${fromDate} - ${toDate}`}
-          </p>
+          <div className="flex flex-wrap gap-1.5">
+            <p>{`${fromDate}`} -</p>
+            <p>{`${toDate}`}</p>
+          </div>
         </section>
         <section className="flex flex-wrap content-center">
           <p></p>

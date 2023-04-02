@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CustomCalendar from "./CustomCalendar";
 import { addWeeks, format } from "date-fns";
 import { db, auth } from "../../FirebaseService";
+import { MdDateRange } from "react-icons/md/index.js";
 import {
   collection,
   onSnapshot,
@@ -22,10 +23,10 @@ const AddRentings = () => {
     email: "",
     phoneNumber: "",
   });
-  const [user, setUser] = useState();
   const [rentings, setRentings] = useState([]);
   const [loading, setLoading] = useState(false);
   const colRef = collection(db, "rentings");
+  const [user, setUser] = useState();
 
   useEffect(() => {
     onSnapshot(colRef, (snapshot) => {
@@ -134,7 +135,7 @@ const AddRentings = () => {
   return (
     <>
       {user && (
-        <div className="max-w-7xl mx-auto mt-20">
+        <div className="max-w-7xl mx-auto mt-12 md:my-20 pb-10">
           <div className="flex h-20 justify-center items-center">
             <button
               type="button"
@@ -146,10 +147,11 @@ const AddRentings = () => {
           </div>
           <div className="grid sm:grid-cols-2">
             <CustomCalendar floor={"both"} form={form} setForm={setForm} />
-            <section className="sm:p-14 gap-10 grid h-fit">
+            <section className="sm:p-14 gap-10 grid h-fit mt-10">
               <div>
-                <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
+                <h2 className="flex-auto flex items-center gap-4 mb-2 text-xl font-semibold text-gray-900">
                   Alla bokningar
+                  <MdDateRange className="h-full" />
                 </h2>
                 {rentings.map((renting) => {
                   return (

@@ -7,6 +7,10 @@ import { TbToolsKitchen2 } from "react-icons/tb/index.js";
 import { BsShieldLockFill } from "react-icons/bs/index.js";
 import { RiErrorWarningLine } from "react-icons/ri/index.js";
 import Footer from "../components/Footer.astro";
+import BVKitchen from "../assets/BV-kitchen.jpg";
+import BVBastu from "../assets/BV-bastu.jpg";
+import BVBeds from "../assets/BV-beds.jpg";
+import "@splidejs/splide/css";
 ---
 
 <Layout title={"Bottenvåning"}>
@@ -19,30 +23,38 @@ import Footer from "../components/Footer.astro";
           Bottenvåning
         </h2>
 
-        <p class="md:mt-4 md:block hidden text-gray-500">
-          wow vilken fin lägenhet. <br /> wow vilken fin lägenhet.
-        </p>
+        <p class="md:mt-4 md:block hidden text-gray-500"></p>
 
         <div class="md:mt-8 mt-4">
           <a
             href="#contact"
             class="bg-indigo-600 text-lg text-white py-2.5 px-6 rounded-lg hover:bg-indigo-800 w-fit"
           >
-            Boka nu
+            Kolla tillgänglighet
           </a>
         </div>
       </div>
     </div>
 
-    <img
-      alt="Violin"
-      src="https://images.unsplash.com/photo-1484959014842-cd1d967a39cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-      class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-tl-[30px] md:h-[calc(100%_-_4rem)] md:rounded-tl-[60px]"
-    />
+    <section class="splide h-full" aria-label="Splide Basic HTML Example">
+      <div class="splide__track h-full">
+        <ul class="splide__list h-full">
+          <li class="splide__slide mx-auto flex justify-center">
+            <img src={BVKitchen} class="h-full" alt="" />
+          </li>
+          <li class="splide__slide">
+            <img src={BVBastu} class="h-full" alt="" />
+          </li>
+          <li class="splide__slide">
+            <img src={BVBeds} class="h-full" alt="" />
+          </li>
+        </ul>
+      </div>
+    </section>
   </section>
   <section class="mt-12 text-white bg-indigo-900">
     <div class="sm:py-12 sm:px-6 lg:py-16 lg:px-8 max-w-screen-xl px-4 py-8">
-      <div class="max-w-xl">
+      <div class="max-w-2xl">
         <h2 class="sm:text-4xl text-3xl font-bold">
           Vad ingår i nedre lägenheten?
         </h2>
@@ -171,3 +183,14 @@ import Footer from "../components/Footer.astro";
   <ContactSection floor={"bottom"} client:visible />
   <Footer />
 </Layout>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+
+  body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    font-family: "Montserrat", sans-serif;
+  }
+</style>

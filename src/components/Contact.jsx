@@ -62,10 +62,7 @@ const Contact = ({ floor, form, setForm }) => {
   }
   return (
     <div className="sm:p-14 grid px-3">
-      <h2
-        className="flex-auto text-xl font-semibold text-gray-900"
-        id="contact"
-      >
+      <h2 className="flex-auto text-xl font-semibold text-gray-900">
         Skicka ett meddelande
       </h2>
       <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
