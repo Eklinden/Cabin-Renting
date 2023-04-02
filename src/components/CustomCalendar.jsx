@@ -234,7 +234,7 @@ const CustomCalendar = ({ form, setForm, floor }) => {
         <div className="flex flex-col-reverse flex-1">
           <dt className="text-base font-medium text-gray-600 text-right">
             <span className="text-green-600">
-              {prices[getWeek(selectedDay)]}
+              {prices[getWeek(selectedDay) - 1]}
             </span>{" "}
             kr / vecka
           </dt>
