@@ -5,6 +5,7 @@ import {
   endOfMonth,
   format,
   getDay,
+  getWeek,
   isEqual,
   isSameDay,
   isSameMonth,
@@ -211,6 +212,37 @@ const CustomCalendar = ({ form, setForm, floor }) => {
           );
         })}
       </div>
+      <div className="relative overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8 flex justify-between gap-6">
+        <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"></span>
+
+        <div>
+          <div className="sm:flex sm:justify-between sm:gap-4">
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+                {format(selectedDay, "EEEE, d MMMM", { locale: sv })}
+              </h3>
+            </div>
+          </div>
+          <div className="mt-4">
+            <p className="max-w-[40ch] text-sm text-gray-500">
+              {floor === "bottom" && "Nedre Lägenheten"}
+              {floor === "top" && "Övre Lägenheten"}
+              {floor === "both" && "Båda Lägenheterna"}
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col-reverse flex-1">
+          <dt className="text-base font-medium text-gray-600 text-right">
+            <span className="text-green-600">
+              {prices[getWeek(selectedDay)]}
+            </span>{" "}
+            kr / vecka
+          </dt>
+          <dd className="text-xs text-gray-500 text-right">
+            Pris baserat på EN lägenhet
+          </dd>
+        </div>
+      </div>
     </div>
   );
 };
@@ -222,5 +254,59 @@ let colStartClasses = [
   "col-start-5",
   "col-start-6",
   "col-start-7",
+];
+let prices = [
+  "9000",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "14000",
+  "14000",
+  "14000",
+  "9000",
+  "9000",
+  "9000",
+  "9000",
+  "14000",
+  "14000",
+  "9000",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "9000",
+  "9000",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "5500",
+  "9000",
+  "9000",
+  "9000",
+  "14000",
+  "14000",
 ];
 export default CustomCalendar;
