@@ -78,40 +78,30 @@ const CustomCalendar = ({ form, setForm, floor }) => {
     <div className="p-2 sm:p-14 mx-auto border-b-2 pb-5 md:border-b-0">
       {floor === "both" && (
         <>
-          {user === null && (
-            <>
-              <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-                Tillgänglighet för att hyra{" "}
-                <span className="text-indigo-600 text-xxl">BÅDA</span>{" "}
-                Lägenheten
-              </h2>
-              <div className="flex flex-wrap mb-5">
-                <div className="flex-grow">
-                  <a
-                    href="/topApartment"
-                    className="hover:text-indigo-800 text-indigo-500"
-                  >
-                    Till övre Lägenheten
-                  </a>
-                  <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
-                </div>
-                <div className="flex-grow">
-                  <a
-                    href="/bottomApartment"
-                    className="hover:text-indigo-800 text-indigo-500"
-                  >
-                    Till nedre Lägenheten
-                  </a>
-                  <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
-                </div>
-              </div>
-            </>
-          )}
-          {user && (
-            <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-              Kalender för alla uthyrningar
-            </h2>
-          )}
+          <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
+            Tillgänglighet för att hyra{" "}
+            <span className="text-indigo-600 text-xxl">BÅDA</span> Lägenheten
+          </h2>
+          <div className="flex flex-wrap mb-5">
+            <div className="flex-grow">
+              <a
+                href="/topApartment"
+                className="hover:text-indigo-800 text-indigo-500"
+              >
+                Till övre Lägenheten
+              </a>
+              <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
+            </div>
+            <div className="flex-grow">
+              <a
+                href="/bottomApartment"
+                className="hover:text-indigo-800 text-indigo-500"
+              >
+                Till nedre Lägenheten
+              </a>
+              <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
+            </div>
+          </div>
         </>
       )}
       {floor === "bottom" && user && <h2>Kalender över alla månader</h2>}
