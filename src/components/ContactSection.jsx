@@ -10,7 +10,7 @@ const ContactSection = ({ floor }) => {
     message: "",
     fromDate: format(new Date(), "yyyy-MM-dd"),
     toDate: format(new Date(addWeeks(new Date(), 1)), "yyyy-MM-dd"),
-    option: "",
+    option: floor,
   });
 
   return (

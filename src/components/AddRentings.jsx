@@ -142,7 +142,7 @@ const AddRentings = () => {
               onClick={handleSignOut}
               className="inline-block rounded-lg bg-red-500 px-5 py-3 text-sm font-medium text-white"
             >
-              signOut
+              Logga ut
             </button>
           </div>
           <div className="grid sm:grid-cols-2">
