@@ -18,6 +18,7 @@ const Contact = ({ floor, form, setForm }) => {
         "template_s0qmtox",
         {
           user_email: form.email,
+          user_phone: form.phone,
           to_email: "l.eklind1@gmail.com",
           from_name: form.name,
           from_date: form.fromDate,
@@ -39,6 +40,7 @@ const Contact = ({ floor, form, setForm }) => {
           setForm({
             name: "",
             email: "",
+            phone: "",
             message: "",
             option: "",
             fromDate: "",
@@ -148,6 +150,26 @@ const Contact = ({ floor, form, setForm }) => {
           />
           <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
             Email
+          </span>
+        </label>
+        <label
+          htmlFor="UserPhone"
+          className="focus-within:border-indigo-600 relative block pt-3 overflow-hidden border-b border-gray-200"
+        >
+          <input
+            type="phone"
+            id="UserPhone"
+            name="phone"
+            value={form.phone}
+            onChange={handleChange}
+            placeholder="Telefon nummer"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Only include numbers: 1234567890"
+            className="peer focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm w-full h-8 p-0 placeholder-transparent bg-transparent border-none"
+            required
+          />
+          <span className="top-2 peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs absolute left-0 text-xs text-gray-700 transition-all -translate-y-1/2">
+            Telefon nummer
           </span>
         </label>
         <label

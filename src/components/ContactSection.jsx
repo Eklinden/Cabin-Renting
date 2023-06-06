@@ -16,7 +16,7 @@ const ContactSection = ({ floor }) => {
   return (
     <div
       id="contact"
-      className="gap-5 ms:gap-14 md:gap-0 md:grid-cols-2 grid pt-20"
+      className="gap-5 ms:gap-14 md:gap-0 md:grid-cols-2 grid pt-20 max-w-screen-xl mx-auto"
     >
       <CustomCalendar floor={floor} form={form} setForm={setForm} />
       <Contact floor={floor} form={form} setForm={setForm} />

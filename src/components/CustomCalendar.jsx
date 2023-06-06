@@ -81,7 +81,9 @@ const CustomCalendar = ({ form, setForm, floor }) => {
           {user === null && (
             <>
               <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-                Kalender för att hyra båda Lägenheterna
+                Tillgänglighet för att hyra{" "}
+                <span className="text-indigo-600 text-xxl">BÅDA</span>{" "}
+                Lägenheten
               </h2>
               <div className="flex flex-wrap mb-5">
                 <div className="flex-grow">
@@ -116,7 +118,8 @@ const CustomCalendar = ({ form, setForm, floor }) => {
       {floor === "bottom" && (
         <>
           <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-            Kalender för att hyra nedre Lägenheten
+            Tillgänglighet för{" "}
+            <span className="text-indigo-600 text-xxl">NEDRE</span> Lägenheten
           </h2>
           <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
         </>
@@ -124,7 +127,8 @@ const CustomCalendar = ({ form, setForm, floor }) => {
       {floor === "top" && (
         <>
           <h2 className="flex-auto mb-2 text-xl font-semibold text-gray-900">
-            Kalender för att hyra övre Lägenheten
+            Tillgänglighet för{" "}
+            <span className="text-indigo-600 text-xxl">ÖVRE</span> Lägenheten
           </h2>
           <div className="w-20 h-1 mb-5 bg-indigo-600 rounded-full"></div>
         </>
